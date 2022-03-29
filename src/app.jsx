@@ -9,16 +9,23 @@ function App({ youtube }) {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
+  const logoClick = useCallback(() => {
+    setSelectedVideo(null);
+    setVideos([]);
+    youtube.mostPopular().then((videos) => setVideos(videos));
+  }, [])
+
   const selectVideo = (video) => {
     setSelectedVideo(video);
   };
 
-  const search = useCallback(query => {
-    setSelectedVideo(null);
-    youtube.search(query)
-     .then((videos) => 
-      setVideos(videos));
-  }, [youtube]);
+  const search = useCallback(
+    (query) => {
+      setSelectedVideo(null);
+      youtube.search(query).then((videos) => setVideos(videos));
+    },
+    [youtube]
+  );
 
   useEffect(() => {
     youtube.mostPopular().then((videos) => setVideos(videos));
@@ -26,7 +33,7 @@ function App({ youtube }) {
 
   return (
     <div className={styles.app}>
-      <SearchHeader onSearch={search} />
+      <SearchHeader onSearch={search} logoClick={logoClick}/>
       <section className={styles.content}>
         {selectedVideo && (
           <div className={styles.detail}>

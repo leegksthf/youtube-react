@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./video_detail.module.css";
 
-const VideoDetail = ({ video, video: { snippet } }) => (
+const VideoDetail = ({ video, video: { snippet } }) => {
+
+  return (
   <section className={styles.detail}>
     <iframe
       type="text/html"
@@ -11,10 +13,12 @@ const VideoDetail = ({ video, video: { snippet } }) => (
       frameBorder="0"
       allowFullScreen
     ></iframe>
+    <h4>{snippet.tags}</h4>
     <h2>{snippet.title}</h2>
     <h3>{snippet.channelTitle}</h3>
     <pre className={styles.description}>{snippet.description}</pre>
   </section>
-);
+  )
+};
 
 export default VideoDetail;
