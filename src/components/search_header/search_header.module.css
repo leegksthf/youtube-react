@@ -1,26 +1,83 @@
+:root{
+    --dark-gray-color: #373737;
+}
+
+.start{
+    display: flex;
+}
+
 .header {
     display: flex;
+    justify-content: space-between;
     height: 4rem;
     padding: 0.8em 1em;
     background: black;
     color: white;
 }
 
+.img{
+    width: 3em;
+}
+
+.toggleBtn {
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+    padding: 0 0.8em;
+}
+
 .logo {
     display: flex;
     align-items: center;
     margin-right: 1em;
+    background: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.inputWrap{
+    display: flex;
 }
 
 .input {
     flex-basis: 100%;
     font-size: 1.2rem;
     outline: 0;
+    background: transparent;
+    border: 1px solid var(--dark-gray-color);
+    padding: 5px;
+    width: 600px;
+    font-size: 1em;
+}
+
+.bellIcon{
+    width: 25px;
+    height: 25px;
+}
+
+.myImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.myInfo{
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .button {
     background-color: darkgrey;
     outline: 0;
+    border: 1px solid var(--dark-gray-color);
+    background: var(--dark-gray-color);
+    padding: 0 20px;
+    border-radius: 0 3px 3px 0;
 }
 
 .buttonImg {
