@@ -1,5 +1,8 @@
 import styles from "./search_header.module.css";
 import React, { memo, useRef } from "react";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBell } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const SearchHeader = memo(({ onSearch, logoClick }) => {
   const inputRef = useRef();
@@ -19,24 +22,35 @@ const SearchHeader = memo(({ onSearch, logoClick }) => {
 
   return (
     <header className={styles.header}>
+      <div className={styles.start}>
+        <button className={styles.toggleBtn}>
+          <FontAwesomeIcon icon={faBars} />
+        </button>
         <button className={styles.logo} onClick={logoClick}>
           <img className={styles.img} src="/images/logo.png" alt="logo" />
-          <h1 className={styles.title}>Youtube</h1>
+          <h2 className={styles.title}>Youtube</h2>
         </button>
-      <input
-        ref={inputRef}
-        className={styles.input}
-        type="search"
-        placeholder="Search..."
-        onKeyPress={onKeyPress}
-      />
-      <button className={styles.button} type="submit" onClick={onClick}>
-        <img
-          className={styles.buttonImg}
-          src="/images/search.png"
-          alt="search"
+      </div>
+      <div className={styles.inputWrap}>
+        <input
+          ref={inputRef}
+          className={styles.input}
+          type="search"
+          placeholder="검색"
+          onKeyPress={onKeyPress}
         />
-      </button>
+        <button className={styles.button} type="submit" onClick={onClick}>
+          <img
+            className={styles.buttonImg}
+            src="/images/search.png"
+            alt="search"
+          />
+        </button>
+      </div>
+      <div className={styles.myInfo}>
+        <FontAwesomeIcon icon={faBell} className={styles.bellIcon} />
+        <img src="/images/myinfo.png" alt="" className={styles.myImg}/>
+      </div>
     </header>
   );
 });
