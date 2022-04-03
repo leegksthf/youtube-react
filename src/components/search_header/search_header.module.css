@@ -52,6 +52,7 @@
     padding: 5px;
     width: 600px;
     font-size: 1em;
+    color: white;
 }
 
 .bellIcon{
@@ -78,6 +79,7 @@
     background: var(--dark-gray-color);
     padding: 0 20px;
     border-radius: 0 3px 3px 0;
+    cursor: pointer
 }
 
 .buttonImg {
