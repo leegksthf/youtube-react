@@ -1,0 +1,6 @@
+.link {
+    display: flex;
+    color: white;
+    gap: 0.5em;
+    text-decoration: none;
+}

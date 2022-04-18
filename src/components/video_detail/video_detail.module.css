@@ -1,18 +1,21 @@
 .detail {
-  padding: 0.2em;
-  padding-right: 1em;
+  padding: 1em 1em 1em 6em;
 }
 
 .description {
   white-space: pre-wrap;
   color: white;
-  padding-left: 4.7em;
+  padding-left: 5em;
+  border-bottom: 1px solid var(--gray-text);
+  padding-bottom: 2em;
+  margin-bottom: 1.5em;
 }
 
 .tag {
   margin-bottom: 0;
-  font-size: 12px;
-  color: #367af0;
+  font-size: 0.7em;
+  color:#3ea6ff;
+  font-family: auto;
 }
 
 .title {
@@ -20,14 +23,39 @@
   color: white;
   font-size: 21px;
   font-weight: 400;
+  margin: 0;
+}
+
+.videoInfo {
   border-bottom: 1px solid var(--gray-text);
-  padding-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.videoPrimaryInfo {
+  color: var(--gray-text);
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+}
+
+.videoSecondInfo {
+  display: flex;
+  gap: 1.5em;
+}
+
+.hits:after {
+  content:"•";
+  color: var(--gray-text);
+  margin: 0 5px;
 }
 
 .channel {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 1em;
 }
 
 .channelTitle {
@@ -36,18 +64,21 @@
 
 .channelInfo {
   display: flex;
-  align-items: center;
-  gap: 0.7em;
+  align-items: center; 
 }
 
-.channelImg {
-  width: 50px;
-  height: 50px;
-  background: white;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 50px;
-  font-weight: 900;
+.imgWrap {
+  width: 3em;
+  height: 3em;
+  flex-shrink: 0;
+  margin-right: 1em;
+}
+
+.img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .subscriber {
@@ -65,4 +96,13 @@
   font-weight: 500;
   line-height: 35px;
   cursor: pointer;
+}
+
+.commentCount {
+  color: white;
+  font-size: 1.1em;
+}
+
+.commentList {
+  padding: 0;
 }

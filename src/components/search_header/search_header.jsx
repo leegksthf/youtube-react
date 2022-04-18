@@ -10,10 +10,16 @@ const SearchHeader = memo(({ onSearch, logoClick }) => {
     const value = inputRef.current.value;
     onSearch(value);
   };
+  
   const onClick = () => {
     handleSearch();
   };
-
+  
+  const onLogoClick = () => {
+    logoClick();
+    inputRef.current.value = '';
+  }
+  
   const onKeyPress = (event) => {
     if (event.key === "Enter") {
       handleSearch();
@@ -26,7 +32,7 @@ const SearchHeader = memo(({ onSearch, logoClick }) => {
         <button className={styles.toggleBtn}>
           <FontAwesomeIcon icon={faBars} />
         </button>
-        <button className={styles.logo} onClick={logoClick}>
+        <button className={styles.logo} onClick={onLogoClick}>
           <img className={styles.img} src="/images/logo.png" alt="logo" />
           <h2 className={styles.title}>Youtube</h2>
         </button>
