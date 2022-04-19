@@ -9,7 +9,7 @@
 - netlify를 통해 배포
 
 ## 개발환경
-|개발언어| html, css, postCSS, JavaScript |
+|개발언어| html, css, JavaScript |
 |--|--|
 |IDE|Visual Studio|
 |형상관리|Github|
